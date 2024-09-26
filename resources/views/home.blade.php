@@ -98,6 +98,33 @@
         <p>&copy; 2024 My Personal Website | All rights reserved.</p>
     </footer>
 
+    <div class="container my-5">
+    <h1 class="mb-4">Daftar Buku</h1>
+
+    <!-- Tabel Daftar Buku -->
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Judul Buku</th>
+                <th scope="col">Penulis</th>
+                <th scope="col">Tahun Terbit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($books as $index => $book)
+                <tr>
+                    <th scope="row">{{ $index + 1 }}</th>
+                    <td>{{ $book['title'] }}</td>
+                    <td>{{ $book['author'] }}</td>
+                    <td>{{ $book['year'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
     <!-- Bootstrap JS and Icons -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
