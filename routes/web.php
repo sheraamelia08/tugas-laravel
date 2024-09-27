@@ -9,3 +9,8 @@ Route::get('/', function () {
 
 Route::get('/home', [HomeController::class,"index"]);
 
+Route::get('/from', function () {
+    return view('from');
+});
+
+Route::post("/submit", [HomeController::class, "from"]);
