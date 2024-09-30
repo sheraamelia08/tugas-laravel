@@ -45,8 +45,9 @@
         <div class="col-md-6">
             <h1 class="display-4">Selamat Datang Diperpustakaan</h1>
             <h3 class="text-muted">Perpustakaan online</h3>
-            <p>“Mari temukan petualangan baru di dalam halaman buku!”. Kata-kata ini bertujuan untuk mengajak pendatang
-                mengeksplorasi buku-buku menarik di perpustakaan.</p>
+            <p>“Mari temukan petualangan baru di dalam halaman buku!”.Perpustakaan juga bisa diartikan koleksi buku, majalah, dan bahan kepustakaan lain yang disimpan untuk dibaca, dipelajari, dibicarakan.
+                Ada banyak pengetahuan yang bisa kamu temukan di dalam sebuah perpustakaan.
+                Banyak ilmu dan penemuan baru bersumber dari perpustakaan. Bisa dibilang, perpustakaan adalah tempat membaca masa depan.</p>
         </div>
         <div class="col-md-6 text-center">
             <div class="position-relative">
@@ -92,7 +93,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="container my-5">
     <h1 class="mb-4">Daftar Buku</h1>
 
