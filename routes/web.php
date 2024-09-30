@@ -13,4 +13,4 @@ Route::get('/from', function () {
     return view('from');
 });
 
-Route::post("/submit", [HomeController::class, "from"]);
+Route::post("/submit",[HomeController::class,"from"]);
