@@ -92,12 +92,7 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="text-center p-4">
-        <p>&copy; 2024 My Personal Website | All rights reserved.</p>
-    </footer>
-
+    
     <div class="container my-5">
     <h1 class="mb-4">Daftar Buku</h1>
 
@@ -125,13 +120,18 @@
 </div>
 <!-- Tampilkan pesan dari form jika ada -->
     @if(session('message'))
-        <div class="alert alert-danger mt-4" style="background-color:#faecf4; ">
+        <div class="alert">
+        <div class="row text-center">
             <h4>Pesan dari Form:</h4>
             <p>{{ session('message') }}</p>
         </div>
     @endif
 
 
+     <!-- Footer -->
+    <footer class="text-center p-4">
+        <p>&copy; 2024 My Personal Website | All rights reserved.</p>
+    </footer>
     <!-- Bootstrap JS and Icons -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
