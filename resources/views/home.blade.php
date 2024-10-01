@@ -127,8 +127,6 @@
             <p>{{ session('message') }}</p>
         </div>
     @endif
-
-
      <!-- Footer -->
     <footer class="text-center p-4">
         <p>&copy; 2024 My Personal Website | All rights reserved.</p>

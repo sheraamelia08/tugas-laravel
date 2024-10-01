@@ -14,3 +14,9 @@ Route::get('/from', function () {
 });
 
 Route::post("/submit",[HomeController::class,"from"]);
+
+
+Route::get('/create', [HomeController::class,"store"]);
+
+Route::get('/show', [HomeController::class,"show"]);
+
