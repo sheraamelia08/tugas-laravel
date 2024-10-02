@@ -37,9 +37,39 @@ class HomeController extends Controller
      public function store(){
         $Product = new product();
         $Product->nama = "Laptop";
+        $Product->harga = "10000";
+        $Product->stok = "10";
+        $Product->deskripsi = "laptop Murah";
+        $Product->save();
+
+        return ("data sukses dikirim");
+    }
+    public function store2(){
+        $Product = new product();
+        $Product->nama = "Rumah";
         $Product->harga = "10000000";
         $Product->stok = "10";
-        $Product->deskripsi = "laptop murah";
+        $Product->deskripsi = "Rumah Mahal";
+        $Product->save();
+
+        return ("data sukses dikirim");
+    }
+    public function store3(){
+        $Product = new product();
+        $Product->nama = "Kursi";
+        $Product->harga = "100000";
+        $Product->stok = "2";
+        $Product->deskripsi = "kursi Murah";
+        $Product->save();
+
+        return ("data sukses dikirim");
+    }
+    public function store4(){
+        $Product = new product();
+        $Product->nama = "Cincin 1kg";
+        $Product->harga = "100000000";
+        $Product->stok = "5";
+        $Product->deskripsi = "Cincin 1kg Buat Ayang";
         $Product->save();
 
         return ("data sukses dikirim");
@@ -48,6 +78,29 @@ class HomeController extends Controller
     public function show(){
     $Product = Product::all();
     return view("tableProduct", compact("Product"));
+    }
+
+    public function edit($id){
+    $Product = Product::findOrFail($id);
+    return view("editProduct", compact("Product"));
+    }
+
+    public function update(Request $request, $id){
+        $Product = Product::findOrFail($id);
+
+        $Product->nama = $request->nama;
+        $Product->harga = $request->harga;
+        $Product->stok = $request->stok;
+        $Product->deskripsi = $request->deskripsi;
+        $Product->save();
+
+        return redirect("/show");
+    }
+    public function destroy($id)
+    {
+        $Product = Product::findOrFail($id);
+        $Product->delete();
+        return redirect("/show");
     }
 }
 
