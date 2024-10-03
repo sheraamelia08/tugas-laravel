@@ -75,8 +75,9 @@ class HomeController extends Controller
         return ("data sukses dikirim");
     }
 
+
     public function show(){
-    $Product = Product::all();
+    $Product = Product::Paginate(3);
     return view("tableProduct", compact("Product"));
     }
 
