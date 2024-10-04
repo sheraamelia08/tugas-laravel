@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Support\Facades\Validator;
 
 
 class HomeController extends Controller
@@ -34,46 +35,29 @@ class HomeController extends Controller
         return redirect('/home');
     }
 
-     public function store(){
+    public function store(Request $request){
+
+        $validator = validator::make($request->all(), [
+            'nama' => 'required|string|max:225',
+            'stok' => 'required|integer|min:5',
+            'harga' => 'required|numeric|min:2',
+            'deskripsi' => 'nullable|string',
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
         $Product = new product();
-        $Product->nama = "Laptop";
-        $Product->harga = "10000";
-        $Product->stok = "10";
-        $Product->deskripsi = "laptop Murah";
+        $Product->nama = $request->nama;
+        $Product->harga = $request->harga;
+        $Product->stok = $request->stok;
+        $Product->deskripsi = $request->deskripsi;
         $Product->save();
 
-        return ("data sukses dikirim");
+        return redirect()->back();
     }
-    public function store2(){
-        $Product = new product();
-        $Product->nama = "Rumah";
-        $Product->harga = "10000000";
-        $Product->stok = "10";
-        $Product->deskripsi = "Rumah Mahal";
-        $Product->save();
 
-        return ("data sukses dikirim");
-    }
-    public function store3(){
-        $Product = new product();
-        $Product->nama = "Kursi";
-        $Product->harga = "100000";
-        $Product->stok = "2";
-        $Product->deskripsi = "kursi Murah";
-        $Product->save();
-
-        return ("data sukses dikirim");
-    }
-    public function store4(){
-        $Product = new product();
-        $Product->nama = "Cincin 1kg";
-        $Product->harga = "100000000";
-        $Product->stok = "5";
-        $Product->deskripsi = "Cincin 1kg Buat Ayang";
-        $Product->save();
-
-        return ("data sukses dikirim");
-    }
 
 
     public function show(){
@@ -102,6 +86,9 @@ class HomeController extends Controller
         $Product = Product::findOrFail($id);
         $Product->delete();
         return redirect("/show");
+    }
+    public function input(){
+        return view("inputProduct");
     }
 }
 
